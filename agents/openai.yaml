@@ -1,0 +1,4 @@
+interface:
+  display_name: "Toturial Skill"
+  short_description: "Learn just enough to complete a real task"
+  default_prompt: "Use $toturial-skill to calibrate my starting point and target, then teach me in chat while guiding this task one verified step at a time."
