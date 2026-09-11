@@ -14,7 +14,7 @@ An explanation is first-principles enough for the current task when the user can
 1. where the conclusion stops being reliable;
 1. how this changes the next action.
 
-Do not appeal only to authority, a memorized recipe, or an analogy. Do not derive below the level needed for the current decision.
+Explain the basis of a conclusion at the depth needed for the current decision. Distinguish deductions from design rationale and empirical support. For a heuristic or measured choice, explain the mechanism that makes it plausible, the evidence for it, and the alternatives or limits; first principles alone may not select a unique method or parameter.
 
 ## Prerequisite Peeling
 
@@ -42,7 +42,7 @@ A useful layer usually contains five moves:
 
 1. **Need:** the concrete problem the current concept solves.
 1. **Object:** the new object, relationship, or rule in plain language.
-1. **Reason:** why it works, derived from known objects and constraints.
+1. **Reason:** the mechanism or logical basis, with mathematical consequences distinguished from empirical support and design rationale.
 1. **Consequence:** what becomes possible and what remains impossible.
 1. **Return:** how it changes the current task step.
 

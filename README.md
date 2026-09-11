@@ -57,7 +57,16 @@ To install one skill:
 npx skills add https://github.com/OutisLi/outisli-skills --global --skill article-reading
 ```
 
-The installer handles each agent's directory. Installing `toturial-skill` from this collection replaces the earlier standalone installation under the same skill name. Other supported agents can be selected with `--agent`.
+The installer handles each agent's directory. Reinstalling refreshes the shared skill content and selected destinations; it preserves any links previously installed in other agents. Other supported agents can be selected with `--agent`.
+
+If migrating an older standalone tutorial installed across many agents, remove that skill's old global registrations before selecting the agents for this collection:
+
+```bash
+npx skills remove toturial-skill --global
+npx skills add https://github.com/OutisLi/outisli-skills --global --skill '*'
+```
+
+The removal names only `toturial-skill`. The following installation restores it from this collection together with the other skills.
 
 Invoke a skill by name, for example, ask the agent to use `article-reading` for a paper or `toturial-skill` for a technical task. Native invocation syntax is `$article-reading` in Codex and `/article-reading` in Claude Code. A matching request can also trigger the skill automatically.
 

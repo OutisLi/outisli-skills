@@ -33,13 +33,15 @@ If urgency is explicit, answer or act first, then add the minimum reason and ver
 
 ## Cognitive Load Budget
 
-When the user is new or confused:
+When the user is new or confused, keep each teaching unit small:
 
-- introduce at most one or two new concepts per turn;
+- introduce one or two connected concepts;
 - use one concrete case or representation;
 - connect it to one immediate action;
-- ask at most one check when a response is needed;
-- stop after the check or user action.
+- ask one focused check when its answer changes the next step;
+- pause when the user's answer or observation is needed to choose what follows.
+
+A complete response can contain several small units in dependency order. Honor an explicit one-shot request while keeping the units readable; do not replace required coverage with a sequence of continuation prompts.
 
 When the user demonstrates a prerequisite, replace its explanation with a one-line bridge. Increase depth through assumptions, derivation, edge cases, or transfer only when the task or user asks for it.
 

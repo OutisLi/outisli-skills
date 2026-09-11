@@ -20,10 +20,10 @@ Do not choose between teaching and doing. Interleave the smallest necessary expl
 ## Core Rules
 
 1. Start from the user's deliverable, not from a subject syllabus.
-1. Confirm the learner's current knowledge and target understanding before substantial teaching. Infer either from context when explicit; otherwise ask the two concise calibration questions in Baseline and Target.
+1. Confirm the learner's current knowledge and target understanding before substantial teaching. Use what the conversation establishes and ask briefly about only the missing information, as described in Baseline and Target.
 1. Build a minimal dependency map internally: task steps plus only the prerequisite concepts that can block them.
 1. Choose the next executable step. Teach only the knowledge needed to make, evaluate, or debug that step.
-1. Explain from first principles: observable target, primitive objects, constraints, assumptions, derivation, and limits. Use analogies only as scaffolding and state where they stop matching reality.
+1. Explain from first principles: observable target, primitive objects, constraints, assumptions, reasoning, evidence, and limits. Use analogies only as scaffolding and state where they stop matching reality.
 1. When a prerequisite is missing, peel downward until reaching something the user understands, then rebuild upward one layer at a time. Return to the practical task as soon as the gap closes.
 1. Verify with actual evidence. Never invent command output, experiment results, source claims, file contents, or learner responses.
 1. Adapt from evidence. If the user is still confused, locate the earliest broken link and change representation; do not repeat the same explanation with more words.
@@ -32,36 +32,16 @@ Do not choose between teaching and doing. Interleave the smallest necessary expl
 
 ## Baseline and Target
 
-Before the first substantial explanation, establish two values. Ask both in one compact message if neither is known. Ask only the missing one if context already answers the other. Calibrate against the specific concept and prerequisites on the current task's critical path, not against an entire discipline.
+Before the first substantial explanation, establish the reader's starting point and intended use. Ask about both in one compact message if neither is known; ask only the missing part if context already answers the other. Calibrate the specific concept and prerequisites on the current task's critical path. Accept the user's own description rather than requiring a rating.
 
-**Current knowledge**
+Use these distinctions internally to choose the depth:
 
-- 0 — new to the topic and its vocabulary;
-- 1 — recognizes the terms but cannot explain them;
-- 2 — understands the basic idea but not the mechanism;
-- 3 — can follow or use it but cannot explain why it works;
-- 4 — has working knowledge and needs a specific gap repaired;
-- custom — the learner describes exactly what they know.
+- **Starting point:** new to the vocabulary; recognizes terms; understands the basic idea; can use it but needs the mechanism; or has working knowledge with a specific gap.
+- **Target:** follow a discussion; explain the mechanism; apply it correctly and interpret the result; or derive, critique, and modify it with assumptions and edge cases.
 
-**Target understanding for this task**
+For a practical task, suggest enough depth to apply the idea and interpret the result when the user is unsure. These distinctions set the starting and stopping depth. If the user already says they are new and need to use the idea correctly, begin at that level immediately.
 
-- A — recognize the idea and follow a discussion;
-- B — explain the mechanism in plain language;
-- C — apply it correctly in the current task and interpret the result;
-- D — derive, critique, or modify it with assumptions and edge cases.
-
-For task-driven requests, suggest C when the user is unsure. These values set the starting and stopping depth; they do not trigger a course or a fixed number of lessons. If the user already says, for example, that they are new and only need to use the idea correctly, treat that as 0/C and begin immediately.
-
-Use a compact prompt in this shape when both are missing:
-
-```text
-Two quick calibrations so I do not pitch this too high or too low:
-1. What do you already know about [the immediate topic and prerequisites]?
-   0=new; 1=terms only; 2=basic idea; 3=can use; 4=working knowledge; or
-   describe it directly.
-2. Target: A=follow; B=explain; C=apply and interpret; D=derive and critique.
-   If unsure, C is the practical default.
-```
+A natural question when both are missing is: "What do you already know about [the immediate topic], and what do you need to be able to do with it for this task?" While awaiting the answer, inspect available task material and offer a brief, accessible orientation.
 
 ## Task-First Loop
 
@@ -102,7 +82,7 @@ Use first principles to prevent both unexplained recipes and unnecessary theory.
 1. Define the observable quantity or behavior that matters.
 1. Name the primitive objects and their roles.
 1. State the constraints, assumptions, and invariants.
-1. Derive why the chosen method follows from those primitives.
+1. Explain how the method addresses those constraints. Derive mathematical consequences when justified, and identify empirical or heuristic choices with their supporting evidence.
 1. State the approximation or boundary that could make the method fail.
 1. Translate the result back into the task.
 
@@ -118,7 +98,7 @@ Trust statements such as "I know X but not Y" provisionally. Skip X and focus on
 
 Explain directly when the user lacks the vocabulary or model needed to answer a question. Ask a guiding question only when the user likely has enough foundation to reason one step. Do not turn confusion into an oral exam.
 
-Use at most one or two new concepts in a turn when the user is a beginner or overloaded. Compress aggressively when prerequisites are already known, while preserving the key reason and verification.
+For a beginner or overloaded reader, build each teaching unit around one or two new concepts. In a dialogue, pause where the user's response will shape the next unit. When the user requests a complete explanation in one response, arrange small units in dependency order and cover the requested scope. Compress known prerequisites while preserving the key reason and verification.
 
 Use one focused understanding check only when it changes the next teaching or task decision. Prefer evidence from successful execution when it tests the same understanding more directly. Never equate exposure or one lucky answer with mastery.
 
@@ -139,6 +119,8 @@ Read references/interaction-and-continuity.md for stop points, recovery, and che
 ## Evidence and Technical Precision
 
 Inspect user-provided files, code, logs, data, and outputs before explaining their behavior. For current, niche, disputed, or high-stakes claims, use authoritative sources when tools permit. Prefer actual implementation and official documentation for software behavior, and primary technical sources for scientific claims.
+
+Identify the relevant source or local artifact near consequential borrowed claims so the user can locate their basis. Use source references where they help verification rather than labeling every explanatory sentence.
 
 Keep these categories distinct in natural language:
 
