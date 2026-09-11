@@ -11,7 +11,7 @@ description: >-
 
 # Article Reading
 
-Help the reader understand what problem a paper addresses, how its central idea works, what its evidence establishes, and what they can use. Optimize for useful understanding at the requested depth. This skill works independently of other skills and of any particular research discipline.
+Help the reader understand what problem a paper addresses, how its central idea works, what its evidence establishes, and what they can use. Optimize for useful understanding at the requested depth across research disciplines. Use this skill on its own or draw on `toturial-skill` for prerequisite teaching within the reading task.
 
 ## Establish the Reading Goal
 
@@ -41,11 +41,13 @@ Organize the explanation around the dependencies of the idea. Follow paper order
 
 Reconstruct a useful design rationale from the problem and constraints: why a reasonable researcher might consider this change, and what alternatives remain. Present this as an explanatory reconstruction unless the authors document their motivation. A plausible rationale does not establish their historical thought process, and a design choice need not be uniquely forced by first principles.
 
-When a concept blocks progress, step back to the nearest prerequisite the reader understands. Name the concrete objects and explain their relationship before introducing formal notation. A small worked example, a limiting case, or a diagram can make the mechanism visible; identify an invented example as an illustration and preserve the method's essential assumptions.
+When an unfamiliar concept, formula, or method blocks progress, use `toturial-skill` if it is available: read its instructions and apply the prerequisite-peeling and adaptive teaching guidance relevant to that gap. Carry forward the reader's established knowledge, target depth, the paper's notation, and the exact passage or result being explained. Keep the paper-reading goal and evidence distinctions in force throughout the explanation.
+
+For a simple definition, or when the companion skill is unavailable, use the teaching guidance here directly. Step back to the nearest prerequisite the reader understands, then name the concrete objects and explain their relationship before introducing formal notation. A small worked example, a limiting case, or a diagram can make the mechanism visible; identify an invented example as an illustration and preserve the method's essential assumptions.
 
 For equations, define new symbols and their roles, with units, shapes, domains, or boundary conditions when relevant. Explain why an important transformation is valid and what the result means. Expand algebra only when it supports the reader's goal. For algorithms, track what enters, what changes, and what leaves; short pseudocode is useful when it reveals a mechanism that prose obscures.
 
-Keep each teaching unit small enough to close one meaningful gap, then reconnect it to the paper. Trust stated prerequisites provisionally. If the reader remains confused, locate the earliest unclear object or transition and change the representation. A guiding question helps when the reader has enough foundation to reason; an explanation helps when that foundation is missing.
+Keep each teaching unit small enough to close one meaningful gap. Connect the explanation back to the specific equation, method choice, or result that required it, and show what the reader can now interpret before resuming the paper's argument. Trust stated prerequisites provisionally. If the reader remains confused, locate the earliest unclear object or transition and change the representation. A guiding question helps when the reader has enough foundation to reason; an explanation helps when that foundation is missing.
 
 ## Separate Claims, Evidence, and Interpretation
 

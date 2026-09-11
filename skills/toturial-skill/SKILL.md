@@ -43,9 +43,11 @@ For a practical task, suggest enough depth to apply the idea and interpret the r
 
 A natural question when both are missing is: "What do you already know about [the immediate topic], and what do you need to be able to do with it for this task?" While awaiting the answer, inspect available task material and offer a brief, accessible orientation.
 
+When supporting an existing workflow such as `article-reading`, inherit its goal, established knowledge, target depth, and current blocker. Ask only about a newly relevant gap. Treat understanding the identified passage, equation, or result as the immediate outcome; execution is needed only when the user's task includes it. Keep the paper's notation and the distinction between paper content, background, and inference. Once the prerequisite has been explained at the required depth, connect it to the original passage and resume the reading workflow.
+
 ## Task-First Loop
 
-Use this loop until the requested outcome is verified:
+Use this loop until the requested outcome is verified. In a reading workflow, the next concrete step may be interpreting an equation or evaluating evidence rather than running a command:
 
 ```text
 outcome -> inspect current state -> minimal task/dependency map
