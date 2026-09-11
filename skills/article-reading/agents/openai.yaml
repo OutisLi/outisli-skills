@@ -1,0 +1,4 @@
+interface:
+  display_name: "Article Reading"
+  short_description: "Understand research papers and use their ideas"
+  default_prompt: "Use $article-reading to explain this paper at my level, connect its main idea to the evidence, and identify what I can use."
