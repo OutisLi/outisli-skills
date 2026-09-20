@@ -1,0 +1,4 @@
+interface:
+  display_name: "Session Export"
+  short_description: "Carry a task into a fresh agent conversation"
+  default_prompt: "Use $session-export to produce a ready-to-paste handover for continuing this task in a fresh agent session."
