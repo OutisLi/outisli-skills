@@ -1,4 +1,4 @@
-% Shared mathematical and table support for the report and its SI.
+% Shared contents, mathematical, and table support for the report and its SI.
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{amsmath}
@@ -17,9 +17,32 @@
 \usepackage{multirow}
 \usepackage{tabularx}
 \usepackage{placeins}
+\usepackage{titletoc}
 
 \setlength{\belowcaptionskip}{5pt}
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+% Contents entries use compact nesting and hanging title alignment.
+\setcounter{tocdepth}{3}
+\contentsmargin{2.5em}
+\ifdefined\tocsep
+    \setlength{\tocsep}{0pt}
+\fi
+\titlecontents{section}[0em]
+{\addvspace{4pt}\small\bfseries}
+{\contentspush{\thecontentslabel\quad}}
+{}
+{\hfill\contentspage}
+\titlecontents{subsection}[1em]
+{\addvspace{2pt}\small}
+{\contentspush{\thecontentslabel\quad}}
+{}
+{\titlerule*[0.5pc]{.}\contentspage}
+\titlecontents{subsubsection}[2em]
+{\small}
+{\contentspush{\thecontentslabel\quad}}
+{}
+{\titlerule*[0.5pc]{.}\contentspage}
 
 \newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
 \newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}}

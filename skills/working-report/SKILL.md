@@ -33,6 +33,8 @@ Include scientifically meaningful negative results and rejected hypotheses in th
 
 Choose sections and their order to fit the study. Explain why the problem matters, what is modeled or measured, how the method follows from the formulation, what was done, what the evidence shows, and which questions remain.
 
+Use concise, specific noun phrases for section headings at every level. Name the scientific topic, method, quantity, or comparison, and keep headings at the same level grammatically parallel. Put explanatory questions, full-sentence claims, and qualifications in the opening paragraph. Keep headings short enough to scan in the table of contents while retaining the terms that distinguish each section.
+
 Write connected paragraphs with one main point each. Explain why a concept, equation, figure, or experiment is needed before using it. State the reasoning that connects successive steps. Use one term for each concept and one meaning for each symbol within its scope.
 
 Explain the scientific mechanism and why each methodological choice fits the problem. Distinguish implementation facts, mathematical deductions, assumptions, approximations, experimental observations, empirical choices, and interpretations. State the conditions under which each conclusion holds.
@@ -75,7 +77,7 @@ For each result, state what it supports and what remains open. Give the setup, c
 
 Draw publication-ready figures in the clean, precise style of Nature and PRL articles. Use clear layouts, crisp lines, and distinguishable colors. Default to Seaborn's `muted` palette for discrete data series. Use a sequential palette for continuous magnitudes and a diverging palette for values around a meaningful midpoint. Use the existing plotting environment and install `seaborn` there when needed. Apply the palette while preserving the specified fonts and layout.
 
-Use Times New Roman for figure text and compatible fonts for mathematical symbols. Size labels, legends, and annotations to look approximately as large as the body text after insertion at the intended width. Check exported figures at that size and verify their actual fonts. Keep editable sources. Use vector output where suitable and sufficient resolution for raster content.
+Use Times New Roman for figure text and compatible fonts for mathematical symbols. Size labels, legends, and annotations to look approximately as large as the body text after insertion at the intended width. Check exported figures at that size and verify their actual fonts. Keep editable sources. Export report figures as PDF and prefer those files in the report; keep PNGs or other formats as useful previews or auxiliary outputs. Preserve vector text and lines where supported and retain adequate resolution for embedded raster content.
 
 Label panels with bold, upright lowercase letters `a`, `b`, `c`, and so on, without parentheses. Place each label at the upper-left of its panel with consistent size and spacing, clear of plotted content and axis labels. Order panels from left to right and top to bottom, and describe them in the same order in the caption.
 
@@ -93,7 +95,7 @@ Preserve source artifacts and valid user-authored content. Keep edits within the
 
 ## Format and Verify
 
-Use the bundled `assets/latex/main.tex` with `wlscirep` and `fleqn,12pt` by default. Select `main_arxiv.tex` as the starter only when the user explicitly requests the arXiv template. Read `references/latex-style.md` before preparing LaTeX. Both layouts share the table, status-label, and SI commands in `report-style.tex`. Follow the user's explicit format requirements and preserve compatible project organization. Apply the same table typography, rules, captions, and note format throughout the report.
+Use the bundled `assets/latex/main.tex` with `wlscirep` and `fleqn,12pt` by default. Select `main_arxiv.tex` as the starter only when the user explicitly requests the arXiv template. Read `references/latex-style.md` before preparing LaTeX. Both layouts share the contents, table, status-label, and SI definitions in `report-style.tex`. Follow the user's explicit format requirements and preserve compatible project organization. Apply the same table typography, rules, captions, and note format throughout the report. In a table of contents, indent each successive heading level by a compact step of about `1em`; align wrapped lines with the entry's title and page numbers at the right margin.
 
 For a new report, keep the selected entry point named `main.tex` at the project root. Keep metadata and chapter inputs there; put chapter content in separate `.tex` files under `chap/`. Split large chapters into subfiles or subdirectories as needed. Create `build/` for compilation and formatter output, and copy the finished PDF to `main.pdf` beside `main.tex`. Include `.gitignore` in every report directory, including directories that are not Git repositories, to exclude temporary files while keeping report sources and the final PDF available for version control.
 

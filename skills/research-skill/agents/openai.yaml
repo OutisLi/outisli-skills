@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Skill"
+  short_description: "Run evidence-driven research in a workspace"
+  default_prompt: "Use $research-skill to carry out this investigation in the specified workspace and produce a verified working report."

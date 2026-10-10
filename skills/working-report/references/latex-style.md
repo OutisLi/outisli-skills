@@ -38,13 +38,17 @@ The explicit arXiv entry point uses `\documentclass[11pt]{article}`, `report-sty
 
 Load `chap/abstract.tex` inside the document after `\maketitle`, as shown in the arXiv starter. Keep table bodies, notes, status labels, and SI numbering on the same shared definitions in `report-style.tex`.
 
+## Table of Contents
+
+When including a table of contents, place `\tableofcontents` after the abstract and before the main sections. Use the shared `titletoc` settings in `report-style.tex` for both layouts. Section, subsection, and subsubsection entries begin at `0em`, `1em`, and `2em`, respectively. Each entry occupies its own paragraph; its number is followed by the title, continuation lines align with the title, and page numbers align at the right margin. Keep headings concise and maintain the compact one-level indentation step when adapting the report.
+
 ## Bibliography and Supplementary Information
 
 Use one shared bibliography. Add `\bibliography{references}` when a populated, verified `references.bib` is present. The bundled bibliography style uses the DOI field directly as a link: store each verified DOI as a complete `https://doi.org/...` resolver URL and check the exported link.
 
 Add `\input{chap/si}` when the report has supplementary material. That file calls `\beginsupplement` once, followed by `\section*{Supplementary Information}` and its sections. This resets section, equation, figure, and table numbering to the S-prefixed series and gives their hyperlinks distinct targets. Split long SI sections into additional files under `chap/` as needed.
 
-Keep the separate figure requirement: Times New Roman inside figures, with readable text at the final insertion size.
+Use PDF figure files in `\includegraphics` by default. Keep the separate figure requirement: Times New Roman inside figures, with readable text at the final insertion size. PNGs and other formats may accompany the PDF as previews or auxiliary outputs.
 
 ## Research Status Labels
 

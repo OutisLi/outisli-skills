@@ -1,0 +1,33 @@
+# Bulk inputs, model artifacts, and generated run outputs.
+/datasets/
+/models/
+/results/
+/references/downloads/
+
+# Superseded material and disposable artifacts.
+/bak/
+/trash/
+
+# Report and software build products.
+build/
+.cache/
+__pycache__/
+*.py[cod]
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex*
+*.toc
+*.lof
+*.lot
+*.xdv
+*.bak*
+*.tmp
+*.part
+.DS_Store
+
+# Authored configs, Markdown records, report sources, and selected PDFs stay visible.
