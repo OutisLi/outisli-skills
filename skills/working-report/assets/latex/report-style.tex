@@ -1,0 +1,57 @@
+% Shared mathematical and table support for the report and its SI.
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[flushleft]{threeparttable}
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage{siunitx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{placeins}
+
+\setlength{\belowcaptionskip}{5pt}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+\newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}}
+\newcolumntype{R}[1]{>{\PreserveBackslash\raggedleft}p{#1}}
+\newcolumntype{L}[1]{>{\PreserveBackslash\raggedright}p{#1}}
+
+% All tables share the same type size, column padding, and row spacing.
+\newcommand{\PaperTableStyle}{%
+    \centering
+    \footnotesize
+    \setlength{\tabcolsep}{3pt}%
+    \renewcommand{\arraystretch}{1.10}%
+}
+\newcommand{\PaperTableNotesStyle}{\scriptsize}
+
+% Scientific status labels use one consistent, visible inline style.
+\newcommand{\ReportStatus}[1]{\textbf{[#1]}}
+
+% The supplementary series uses distinct printed numbers and hyperlink targets.
+\newcommand{\beginsupplement}{%
+    \clearpage
+    \setcounter{section}{0}%
+    \renewcommand{\thesection}{S\arabic{section}}%
+    \renewcommand{\theHsection}{S.\arabic{section}}%
+    \renewcommand{\theHsubsection}{S.\arabic{section}.\arabic{subsection}}%
+    \setcounter{equation}{0}%
+    \renewcommand{\theequation}{S\arabic{equation}}%
+    \renewcommand{\theHequation}{S.\arabic{equation}}%
+    \setcounter{figure}{0}%
+    \renewcommand{\thefigure}{S\arabic{figure}}%
+    \renewcommand{\theHfigure}{S.\arabic{figure}}%
+    \setcounter{table}{0}%
+    \renewcommand{\thetable}{S\arabic{table}}%
+    \renewcommand{\theHtable}{S.\arabic{table}}%
+}
