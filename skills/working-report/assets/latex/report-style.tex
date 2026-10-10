@@ -23,23 +23,29 @@
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 
 % Contents entries use compact nesting and hanging title alignment.
+\newlength{\ReportContentsBaseline}
+\newcommand{\ReportContentsStyle}{%
+    \setlength{\ReportContentsBaseline}{1.08\baselineskip}%
+    \small
+    \setlength{\baselineskip}{\ReportContentsBaseline}%
+}
 \setcounter{tocdepth}{3}
 \contentsmargin{2.5em}
 \ifdefined\tocsep
     \setlength{\tocsep}{0pt}
 \fi
 \titlecontents{section}[0em]
-{\addvspace{4pt}\small\bfseries}
+{\addvspace{4pt}\bfseries\ReportContentsStyle}
 {\contentspush{\thecontentslabel\quad}}
 {}
 {\hfill\contentspage}
 \titlecontents{subsection}[1em]
-{\addvspace{2pt}\small}
+{\addvspace{2pt}\ReportContentsStyle}
 {\contentspush{\thecontentslabel\quad}}
 {}
 {\titlerule*[0.5pc]{.}\contentspage}
 \titlecontents{subsubsection}[2em]
-{\small}
+{\ReportContentsStyle}
 {\contentspush{\thecontentslabel\quad}}
 {}
 {\titlerule*[0.5pc]{.}\contentspage}

@@ -40,7 +40,7 @@ Load `chap/abstract.tex` inside the document after `\maketitle`, as shown in the
 
 ## Table of Contents
 
-When including a table of contents, place `\tableofcontents` after the abstract and before the main sections. Use the shared `titletoc` settings in `report-style.tex` for both layouts. Section, subsection, and subsubsection entries begin at `0em`, `1em`, and `2em`, respectively. Each entry occupies its own paragraph; its number is followed by the title, continuation lines align with the title, and page numbers align at the right margin. Keep headings concise and maintain the compact one-level indentation step when adapting the report.
+When including a table of contents, place `\tableofcontents` after the abstract and before the main sections. Use the shared `titletoc` settings in `report-style.tex` for both layouts. Section, subsection, and subsubsection entries begin at `0em`, `1em`, and `2em`, respectively. `\ReportContentsStyle` keeps the contents type compact and sets its baseline distance to `1.08` times the surrounding body-text value. Each entry occupies its own paragraph; its number is followed by the title, continuation lines align with the title, and page numbers align at the right margin. Keep headings concise and maintain these small spacing differences when adapting the report.
 
 ## Bibliography and Supplementary Information
 
