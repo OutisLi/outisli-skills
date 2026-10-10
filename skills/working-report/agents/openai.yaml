@@ -1,0 +1,4 @@
+interface:
+  display_name: "Working Report"
+  short_description: "Maintain clear, formal research reports"
+  default_prompt: "Use $working-report to write or update a formal research report that explains the study, its evidence, and its open questions."
