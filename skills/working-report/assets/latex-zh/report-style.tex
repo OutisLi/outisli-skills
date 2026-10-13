@@ -1,0 +1,165 @@
+% Chinese article typography and scientific report conventions.
+\usepackage{iftex}
+\RequireXeTeX
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{amsmath,amsthm,mathtools}
+\usepackage{graphicx,xcolor}
+\usepackage[flushleft]{threeparttable}
+\usepackage{booktabs,makecell,siunitx,array,multirow,tabularx}
+\usepackage{placeins}
+\usepackage{caption}
+\usepackage[titles]{tocloft}
+\usepackage[
+    backend=biber,
+    style=gb7714-2015,
+    gbnamefmt=lowercase,
+    gbpub=false,
+    doi=false,
+    url=false,
+    eprint=false
+]{biblatex}
+\usepackage[unicode,colorlinks=true,allcolors=blue]{hyperref}
+
+% Explicit font faces keep Chinese weight and mixed-script text consistent.
+\setCJKmainfont{FandolSong-Regular.otf}[
+    BoldFont=FandolHei-Regular.otf,
+    ItalicFont=FandolKai-Regular.otf,
+    BoldItalicFont=FandolKai-Regular.otf
+]
+\setCJKsansfont{FandolHei-Regular.otf}[BoldFont=FandolHei-Regular.otf]
+\setCJKmonofont{FandolFang-Regular.otf}
+% NewTX initializes its paired Latin text and math families after CJK fonts.
+\usepackage{newtx}
+\usepackage{bm}
+\linespread{1.39}
+\setlength{\parskip}{0pt}
+\pagestyle{plain}
+\sisetup{per-mode=symbol}
+
+\ctexset{
+    autoindent=true,
+    contentsname={目录},
+    abstractname={摘要},
+    bibname={参考文献},
+    figurename={图},
+    tablename={表},
+    section={
+      format={\normalfont\zihao{-3}\bfseries\raggedright},
+      beforeskip={20bp plus 1ex minus 0.2ex},
+      afterskip={5bp plus 0.2ex},
+      aftername={\quad},
+      afterindent=true
+     },
+    subsection={
+            format={\normalfont\zihao{4}\bfseries\raggedright},
+            beforeskip={12bp plus 1ex minus 0.2ex},
+            afterskip={5bp plus 0.2ex},
+            aftername={\quad},
+            afterindent=true
+        },
+    subsubsection={
+            format={\normalfont\zihao{-4}\bfseries\raggedright},
+            beforeskip={12bp plus 1ex minus 0.2ex},
+            afterskip={5bp plus 0.2ex},
+            aftername={\quad},
+            afterindent=true
+        }
+}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+% The title and abstract form a compact article opening.
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@fpsep}{12bp}
+\setlength{\@fpbot}{0pt plus 1fil}
+\renewcommand{\@maketitle}{%
+    \begingroup
+    \centering
+    {\normalfont\fontsize{25bp}{30bp}\bfseries\linespread{1.15}\selectfont\@title\par}%
+    \ifx\@author\@empty\else
+        \vspace{8bp}%
+        {\normalfont\normalsize\begin{tabular}[t]{c}\@author\end{tabular}\par}%
+    \fi
+    \ifx\@date\@empty\else
+        \vspace{4bp}%
+        {\normalfont\small\@date\par}%
+    \fi
+    \endgroup
+    \vspace{12bp}%
+}
+\renewenvironment{abstract}{%
+    \par\begingroup
+    {\centering\normalfont\zihao{4}\bfseries\abstractname\par}%
+    \vspace{8bp}%
+    \normalfont\normalsize
+    \setlength{\parindent}{2\ccwd}%
+    \ignorespaces
+}{%
+    \par\endgroup
+    \vspace{8bp}%
+}
+\renewcommand{\tableofcontents}{%
+    \begingroup
+    \hypersetup{hidelinks}%
+    \ctexset{section={%
+          format={\normalfont\zihao{-2}\bfseries\centering},%
+          beforeskip=0pt,%
+          afterskip={18bp plus 0.2ex}%
+         }}%
+    \pdfbookmark[1]{\contentsname}{report-contents}%
+    \section*{\contentsname}%
+    \@starttoc{toc}%
+    \endgroup
+}
+\makeatother
+\renewcommand*{\bibfont}{\zihao{5}\linespread{1.27}\selectfont}
+\setlength{\bibitemsep}{3bp}
+
+% Contents use body-size text, dotted leaders, and character-based nesting.
+\setlength{\cftbeforesecskip}{6bp plus 1bp}
+\setlength{\cftsubsecindent}{\ccwd}
+\setlength{\cftsubsubsecindent}{2\ccwd}
+\setlength{\cftsecnumwidth}{1.5em}
+\setlength{\cftsubsecnumwidth}{2.3em}
+\setlength{\cftsubsubsecnumwidth}{3.2em}
+\renewcommand{\cftsecdotsep}{\cftdotsep}
+
+% Captions use the body family and a space after the figure or table number.
+\DeclareCaptionFont{reportcaption}{\zihao{5}}
+\DeclareCaptionLabelSeparator{quad}{\quad}
+\captionsetup{font=reportcaption,labelsep=quad}
+\captionsetup[table]{position=top}
+\setlength{\belowcaptionskip}{5pt}
+
+\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+\newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}}
+\newcolumntype{R}[1]{>{\PreserveBackslash\raggedleft}p{#1}}
+\newcolumntype{L}[1]{>{\PreserveBackslash\raggedright}p{#1}}
+
+\newcommand{\PaperTableStyle}{%
+    \centering
+    \footnotesize
+    \setlength{\tabcolsep}{3pt}%
+    \renewcommand{\arraystretch}{1.10}%
+}
+\newcommand{\PaperTableNotesStyle}{\scriptsize}
+\newcommand{\ReportStatus}[1]{\textbf{[#1]}}
+
+% Supplementary items use distinct printed numbers and hyperlink targets.
+\newcommand{\beginsupplement}{%
+    \clearpage
+    \setcounter{section}{0}%
+    \renewcommand{\thesection}{S\arabic{section}}%
+    \renewcommand{\theHsection}{S.\arabic{section}}%
+    \renewcommand{\theHsubsection}{S.\arabic{section}.\arabic{subsection}}%
+    \setcounter{equation}{0}%
+    \renewcommand{\theequation}{S\arabic{equation}}%
+    \renewcommand{\theHequation}{S.\arabic{equation}}%
+    \setcounter{figure}{0}%
+    \renewcommand{\thefigure}{S\arabic{figure}}%
+    \renewcommand{\theHfigure}{S.\arabic{figure}}%
+    \setcounter{table}{0}%
+    \renewcommand{\thetable}{S\arabic{table}}%
+    \renewcommand{\theHtable}{S.\arabic{table}}%
+}

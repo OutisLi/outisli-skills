@@ -1,0 +1,19 @@
+defaultIndent: '    '
+indentPreamble: 1
+modifyLineBreaks:
+  preserveBlankLines: 1
+  condenseMultipleBlankLinesInto: 1
+  oneSentencePerLine:
+    manipulateSentences: 1
+    removeSentenceLineBreaks: 1
+    textWrapSentences: 0
+    sentencesFollow:
+      other: '[。！？][”’」』）]*'
+    sentencesBeginWith:
+      other: '[\p{Han}“‘「『（0-9]'
+    sentencesEndWith:
+      other: '[。！？][”’」』）]*'
+    sentencesDoNOTcontain:
+      other: '\\begin|\\end|(?<!\\)&'
+  textWrapOptions:
+    columns: 0
