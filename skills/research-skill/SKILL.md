@@ -75,6 +75,6 @@ Keep the report current at substantive milestones. Include relevant negative fin
 
 Maintain selected report figures as PDFs in `figures/`, following `working-report`'s figure style. Keep PNGs or other formats as useful previews or auxiliary outputs. Link each figure to its generating script and source evidence, and prefer PDF figure files in the report.
 
-Use plain, declarative explanations in conversation and match the user's language. Use `toturial-skill` when the user wants to understand a concept or research decision, carrying forward the known baseline and task. Report useful findings, consequential changes, or blockers rather than a stream of routine operations.
+Use plain, declarative explanations in conversation and match the user's language. Use `tutorial-skill` when the user wants to understand a concept or research decision, carrying forward the known baseline and task. Report useful findings, consequential changes, or blockers rather than a stream of routine operations.
 
 Deliver the current report, with its rendered PDF when applicable and available. Identify the maintained code and selected artifacts, and state what was verified and what remains open. Keep internal records available for continuation and outside the reader-facing delivery. Use `session-export` when the user requests a handover to another conversation.

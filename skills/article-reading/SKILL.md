@@ -11,7 +11,7 @@ description: >-
 
 # Article Reading
 
-Help the reader understand what problem a paper addresses, how its central idea works, what its evidence establishes, and what they can use. Optimize for useful understanding at the requested depth across research disciplines. Use this skill on its own or draw on `toturial-skill` for prerequisite teaching within the reading task.
+Help the reader understand what problem a paper addresses, how its central idea works, what its evidence establishes, and what they can use. Optimize for useful understanding at the requested depth across research disciplines. Use this skill on its own or draw on `tutorial-skill` for prerequisite teaching within the reading task.
 
 ## Establish the Reading Goal
 
@@ -41,7 +41,7 @@ Organize the explanation around the dependencies of the idea. Follow paper order
 
 Reconstruct a useful design rationale from the problem and constraints: why a reasonable researcher might consider this change, and what alternatives remain. Present this as an explanatory reconstruction unless the authors document their motivation. A plausible rationale does not establish their historical thought process, and a design choice need not be uniquely forced by first principles.
 
-When an unfamiliar concept, formula, or method blocks progress, use `toturial-skill` if it is available: read its instructions and apply the prerequisite-peeling and adaptive teaching guidance relevant to that gap. Carry forward the reader's established knowledge, target depth, the paper's notation, and the exact passage or result being explained. Keep the paper-reading goal and evidence distinctions in force throughout the explanation.
+When an unfamiliar concept, formula, or method blocks progress, use `tutorial-skill` if it is available: read its instructions and apply the prerequisite-peeling and adaptive teaching guidance relevant to that gap. Carry forward the reader's established knowledge, target depth, the paper's notation, and the exact passage or result being explained. Keep the paper-reading goal and evidence distinctions in force throughout the explanation.
 
 For a simple definition, or when the companion skill is unavailable, use the teaching guidance here directly. Step back to the nearest prerequisite the reader understands, then name the concrete objects and explain their relationship before introducing formal notation. A small worked example, a limiting case, or a diagram can make the mechanism visible; identify an invented example as an illustration and preserve the method's essential assumptions.
 

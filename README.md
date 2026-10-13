@@ -4,7 +4,7 @@ Personal skills for conducting, understanding, and documenting research, learnin
 
 - [research-skill](skills/research-skill/SKILL.md): carry out a study in an organized workspace, validate experiments, preserve useful records, and produce a working report.
 - [article-reading](skills/article-reading/SKILL.md): understand a paper's problem, method, evidence, and useful implications from a file, link, identifier, or excerpt.
-- [toturial-skill](skills/toturial-skill/SKILL.md): learn the necessary concepts while working through a technical task, one manageable step at a time.
+- [tutorial-skill](skills/tutorial-skill/SKILL.md): learn the necessary concepts while working through a technical task, one manageable step at a time.
 - [session-export](skills/session-export/SKILL.md): create a handover prompt you can paste directly into a fresh agent conversation, preserving the task and verified state without carrying over unsupported guesses.
 - [working-report](skills/working-report/SKILL.md): maintain a coherent research report with accessible explanations and supplementary material where needed, using English and LaTeX by default.
 
@@ -25,7 +25,7 @@ Ask your agent to use a skill by name:
 ```text
 Use research-skill to investigate [question] in [workspace] with [resources and constraints].
 Use article-reading to help me understand this paper: [link or file].
-Use toturial-skill to teach me what I need to complete [task].
+Use tutorial-skill to teach me what I need to complete [task].
 Use session-export to prepare a handover I can paste into a fresh agent conversation.
 Use working-report to develop this ongoing study into a clear research report.
 ```

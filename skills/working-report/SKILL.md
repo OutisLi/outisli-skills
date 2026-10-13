@@ -43,7 +43,7 @@ Explain the scientific mechanism and why each methodological choice fits the pro
 
 Assume secondary-school mathematics and science unless the user gives a different baseline. Define unfamiliar concepts and abbreviations at first use. Connect each new concept to quantities, observations, or relationships already introduced. Aim for enough understanding to follow and assess the study.
 
-When `toturial-skill` is available, read it and use its prerequisite analysis and first-principles method. Use the known reader baseline and report objective. Apply the teaching method while composing the complete report.
+When `tutorial-skill` is available, read it and use its prerequisite analysis and first-principles method. Use the known reader baseline and report objective. Apply the teaching method while composing the complete report.
 
 Write natural, precise academic prose throughout the report and SI. Use specific claims, clear sentences, and transitions that follow the actual argument. Remove generic praise, inflated language, empty emphasis, stock transitions, and repetitive summaries. Integrate explanations where the argument needs them. Reader exercises and comprehension checks belong only in explicitly requested conversation.
 

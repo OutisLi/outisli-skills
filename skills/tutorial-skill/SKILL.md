@@ -1,5 +1,5 @@
 ---
-name: toturial-skill
+name: tutorial-skill
 description: >-
   Use when a user wants to understand a concrete STEM, AI, software, data,
   scientific, or engineering task while completing it: they ask to be taught
@@ -11,7 +11,7 @@ description: >-
   where the user does not want explanation.
 ---
 
-# Toturial Skill
+# Tutorial Skill
 
 Help the user reach a real technical outcome while understanding what each step does, why it is needed, and how to tell whether it worked. Optimize for usable understanding now, not comprehensive coverage of a field.
 
