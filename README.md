@@ -16,7 +16,19 @@ Research uses working-report for its final report. Paper reading and report writ
 npx skills add https://github.com/OutisLi/outisli-skills --global --skill '*'
 ```
 
-Select the agents you use in the installer, then start a new agent session. Run the same command again to update the collection and include newly added skills.
+The default setup includes this collection and the third-party skills in [Recommended Skills](#recommended-skills). After running the command above, install each recommended skill with its listed command.
+
+Select the agents you use in each installer, then start a new agent session. Run the same commands again to update the installed skills.
+
+## Recommended Skills
+
+### [anatomy](https://github.com/wheresryan22/anatomy)
+
+Explain machines and technical concepts with detailed, interactive isometric illustrations. Produces SVG, standalone HTML, or React components, with optional WebGL effects.
+
+```bash
+npx skills add https://github.com/wheresryan22/anatomy --global
+```
 
 ## Use
 
