@@ -1,6 +1,6 @@
 # Attribution Notice
 
-This skill is an original, task-first synthesis informed by the following open-source teaching skills:
+This skill is an original, task-first synthesis informed by the following teaching and technical-writing sources:
 
 - **Universal Diagnostic Tutor Skill**
 
@@ -17,4 +17,10 @@ This skill is an original, task-first synthesis informed by the following open-s
   - License: Apache-2.0
   - Ideas adapted: baseline and target calibration, recursive prerequisite peeling, concrete-to-abstract reconstruction, one-layer-at-a-time explanation, plain-language pairing, time-aware depth, and continuity between layers.
 
-No upstream files are vendored. The upstream licenses and copyright notices remain available in their respective repositories. This notice documents conceptual provenance; it does not assign a license to this repository.
+- **ASD-STE100 Simplified Technical English**
+
+  - Standard: Issue 9, January 2025.
+  - Official references: https://www.asd-ste100.org/about_STE.html and https://www.asd-ste100.org/STE_faq.html.
+  - Ideas adapted: explicit actions and conditions, consistent terminology, and focused sentences and paragraphs.
+
+No source files or controlled dictionary are vendored. Licenses and copyright notices remain available from the respective sources. This notice documents conceptual provenance; it does not assign a license to this repository or claim ASD-STE100 compliance.
