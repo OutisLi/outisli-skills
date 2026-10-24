@@ -4,7 +4,7 @@ description: >-
   Carry out and continue goal-directed research in a designated workspace.
   Use when the user delegates a multi-step STEM, AI, or computational study
   that involves literature, experiment design, execution, validation, and
-  interpretation. Maintain organized source files and experiment records,
+  interpretation. Maintain organized source files, project memory, and experiment records,
   choose the next investigation from evidence, and use working-report for
   the reader-facing report.
 ---
@@ -15,7 +15,7 @@ Advance the user's research question through work that produces interpretable ev
 
 ## Establish the Research Task
 
-Read the user's current goal and corrections, the workspace instructions, the current-state summary and relevant prior records, code, and available artifacts. Identify the question, intended deliverable, acceptance criteria, and current stage. Determine whether the task calls for reproduction, measurement, explanation, method development, or theoretical analysis; choose evidence appropriate to that purpose.
+Read the user's current goal and corrections, the workspace's `AGENTS.md` and `memory.md`, and the current-state summary in the agent record. Follow their pointers to relevant prior records, code, and artifacts. Identify the question, intended deliverable, acceptance criteria, and current stage. Determine whether the task calls for reproduction, measurement, explanation, method development, or theoretical analysis; choose evidence appropriate to that purpose.
 
 Reuse the datasets, model checkpoints, methods, and other inputs the user selected. Verify their identities, versions, and roles before using them. Establish what already exists and what still needs to be done before scheduling new work.
 
@@ -27,7 +27,15 @@ Before a long or costly run, establish the authorized hardware, execution enviro
 
 Use the user-designated directory as the workspace root. Read `references/workspace.md` when setting up, reorganizing, or cleaning the workspace. Use its layout and the templates in `assets/workspace/` as starting points, retaining sensible existing organization and creating only the directories the study needs. Use the actual paths recorded in the workspace map; paths below are defaults.
 
-Maintain a concise project `AGENTS.md` with the research objective, stable constraints, actual paths, environment, resources, and essential commands. Keep current progress and dated research history in the English `notes/agent-notes.md`, or the existing equivalent. Both documents are useful version-controlled sources. Integrate changes into their existing structure; chronological entries belong in the experiment record.
+Maintain three English, agent-facing records with distinct purposes:
+
+| File                                                 | Purpose                                    | Contents                                                                                                                                                |
+| ---------------------------------------------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `AGENTS.md` at the workspace root                    | How to work here                           | Research objective, acceptance criteria, operating rules, authorized resources, environment, essential commands, and paths to the records and evidence. |
+| `memory.md` beside `AGENTS.md`                       | What future work should remember           | Durable project knowledge, user-requested memories, settled decisions and their rationale, and useful lessons with their scope and evidence.            |
+| `notes/agent-notes.md`, or the existing agent record | Where the work stands and how it got there | Current plan, running jobs, latest checks, unresolved questions, next actions, and dated experiment history.                                            |
+
+Give each fact one primary home and link to it where needed. Record a user requirement that governs execution in `AGENTS.md`; keep a remembered fact or decision rationale in `memory.md`. Keep transient status in the agent record. Reuse existing records and consolidate overlapping material without losing evidence. All three files are eligible for Git and remain separate from the reader-facing report.
 
 Keep source code, authored configurations, internal Markdown records, report sources, and selected report figures eligible for Git. Route generated results, CSV/JSON outputs, manifests, logs, checkpoints, and caches to ignored locations. Create `.gitignore` even in a workspace without Git. Initialize repositories, commit, and push only when requested.
 
@@ -49,7 +57,7 @@ Correctness comes before performance. Keep implementations coherent, use maintai
 
 Give each run a distinct output location. Save the effective configuration, input identities, command, environment, seeds, relevant code identity or source snapshot, resource use, and validation evidence needed to reproduce it. Put full output in run-local logs and inspect targeted summaries or log segments. Record missing measurements as missing, with their execution status.
 
-For long-running work, retain job identifiers, output paths, and meaningful health or completion checks. Use the available waiting or monitoring mechanism. On resumption, check live jobs and artifacts before launching replacements. Adjust an in-scope failed run from a supported diagnosis, and keep unrelated processes and user work intact.
+For long-running work, retain the host, job identifier, output paths, last observed state, and next check in the agent record. Confirm startup, estimate the remaining duration, and use the harness's available waiting or monitoring mechanism. In Codex, use `monitor-skill` when available; in Claude Code, use its native background-task tools. On resumption, check live jobs and artifacts before launching replacements. Adjust an in-scope failed run from a supported diagnosis, and keep unrelated processes and user work intact.
 
 Check process completion, artifact validity, and scientific support separately. Recompute consequential results from the saved evidence. Investigate surprising gains or failures through data identity, units, implementation, evaluation, uncertainty, and relevant assumptions before drawing a stronger conclusion. Keep comparisons consistent; when an evaluation defect is corrected, record the changed procedure and repeat affected comparisons.
 
@@ -63,7 +71,9 @@ Continue while useful, authorized work remains. Finish or pause at the user's st
 
 ## Record Progress and Keep Active Work Clean
 
-Keep the agent record in English, with a concise current-state summary and dated entries for meaningful attempts, failures, findings, decisions, and next steps. Link to evidence and preserve the settings needed to interpret it. Read the current summary and relevant entries on resumption, then verify time-sensitive facts against live state. Keep raw logs and bulk result files outside routine context loading.
+Update the agent record at meaningful findings, decisions, job transitions, and handovers. Keep its current-state summary accurate and its dated entries concise, with evidence pointers and the settings needed to interpret each result. Read relevant history on demand and verify time-sensitive facts against live state. Keep raw logs and bulk result files outside routine context loading.
+
+Maintain `memory.md` as a compact account of knowledge that remains useful beyond the current run. Save user-requested memories promptly, routing operating requirements to `AGENTS.md`. Promote an experimental lesson from the agent record when evidence supports its reuse; record its applicability and source, and mark any uncertainty. Reference authoritative files instead of copying material that is readily recoverable from them. Integrate related entries, replace superseded knowledge, and retain the decision history in the agent record. Keep secrets out of all three records. Project records belong to this workspace; updating them does not require changing harness-managed global memory.
 
 Preserve valid evidence, including scientifically meaningful negative results. Move useful superseded material to `bak/` with enough context to recover it. Put disposable material in `trash/`, or permanently remove confirmed disposable agent-generated files when cleanup is authorized. Resolve exact paths and check ownership, dependencies, and active jobs before cleanup. Preserve original inputs, user-authored work, and evidence supporting current conclusions. Keep `bak/` and `trash/` outside normal searches and Git.
 

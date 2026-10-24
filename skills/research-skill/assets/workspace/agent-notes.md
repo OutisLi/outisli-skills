@@ -2,9 +2,9 @@
 
 ## Current State
 
-- Active objective: [Current question and acceptance criteria.]
-- Established findings: [Verified findings with evidence pointers.]
-- Running work: [Host, job identifier, output path, and last checked state.]
+- Active subtask: [Current question within the scope defined in AGENTS.md.]
+- Current findings: [Evidence pointers and links to established knowledge in memory.md.]
+- Running work: [Host, job identifier, output path, last checked state and time, and next check.]
 - Open decisions and limits: [Uncertainty, blockers, and remaining resources.]
 - Next action: [The next justified action and what it should establish.]
 

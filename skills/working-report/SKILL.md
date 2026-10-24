@@ -4,14 +4,15 @@ description: >-
   Write and maintain formal reports for ongoing research, using English and
   LaTeX by default. Use for working papers and research reports that explain
   the study, document evidence, and identify open questions. Make the main
-  text understandable from the reader's background, explain complex supporting
-  tools in supplementary information, and keep execution history in separate
+  text understandable through clear explanations, data plots, and explanatory
+  figures. Explain complex supporting tools in supplementary information and
+  keep execution history in separate
   agent notes.
 ---
 
 # Working Report
 
-Write a self-contained report of what the study establishes and what remains open. Make it suitable to share with an advisor or collaborator. Let the explanation and evidence determine its length.
+Write a self-contained report of what the study establishes and what remains open. Make it suitable to share with an advisor or collaborator. Combine concise prose, equations, data plots, and explanatory figures so the reader can follow the argument with little reconstruction. Let the explanation and evidence determine its length.
 
 ## Set the Scope and Read the Sources
 
@@ -33,6 +34,8 @@ Include scientifically meaningful negative results and rejected hypotheses in th
 
 Choose sections and their order to fit the study. Explain why the problem matters, what is modeled or measured, how the method follows from the formulation, what was done, what the evidence shows, and which questions remain.
 
+Plan the figures alongside the section outline. Identify the comparisons, relationships, mechanisms, and unfamiliar concepts that become easier to understand when shown. Give each visual a clear question to answer and place it near the explanation or result that uses it. Keep a point in prose when a short sentence conveys it more directly. Choose visual coverage by reader need, not by a figure quota.
+
 Use concise, specific noun phrases for section headings at every level. Name the scientific topic, method, quantity, or comparison, and keep headings at the same level grammatically parallel. Put explanatory questions, full-sentence claims, and qualifications in the opening paragraph. Keep headings short enough to scan in the table of contents while retaining the terms that distinguish each section.
 
 Write connected paragraphs with one main point each. Explain why a concept, equation, figure, or experiment is needed before using it. State the reasoning that connects successive steps. Use one term for each concept and one meaning for each symbol within its scope.
@@ -41,7 +44,7 @@ Explain the scientific mechanism and why each methodological choice fits the pro
 
 ## Explain Concepts in Context
 
-Assume secondary-school mathematics and science unless the user gives a different baseline. Define unfamiliar concepts and abbreviations at first use. Connect each new concept to quantities, observations, or relationships already introduced. Aim for enough understanding to follow and assess the study.
+Assume secondary-school mathematics and science unless the user gives a different baseline. Define unfamiliar concepts and abbreviations at first use. Connect each new concept to quantities, observations, or relationships already introduced. Pair a concise definition with a simple explanatory figure when geometry, dependencies, transformations, or a concrete example make its meaning easier to grasp. Aim for enough understanding to follow and assess the study.
 
 When `tutorial-skill` is available, read it and use its prerequisite analysis and first-principles method. Use the known reader baseline and report objective. Apply the teaching method while composing the complete report.
 
@@ -54,8 +57,6 @@ Explain simple tools in the main text. For a complex tool, give enough explanati
 Define each symbol and its object type at first use. State what every index labels and its range. Distinguish physical and dimensionless quantities, sets, operators, and random variables. Default to italic scalars, bold lowercase vectors, and bold uppercase matrices and higher-order tensors; explain departures at first use. Use upright type for standard group, operator, and function names and descriptive subscripts. In LaTeX, define recurring mathematical commands in one shared preamble.
 
 Give units and the shapes and axis meanings of non-scalar quantities. Check dimensional consistency in equations, losses, and normalizations. Specify summation indices and ranges, integration variables and domains, and the measures or probability distributions used in integrals and expectations. State relevant normalization, cutoffs, smoothing, numerical regularization, and boundary or initial conditions. Retain every coefficient, exponent, and constraint needed to reproduce the method. For implemented methods, match mathematical objects to their tensor layouts and explain any mapping between them. State the group and transformation law when making symmetry claims, and distinguish invariance from equivariance.
-
-Explain how illustrative calculations or diagrams relate to the study's actual evidence.
 
 Use the user's questions to identify missing definitions or reasoning steps. During a requested revision, repair those gaps in the report and update affected passages. Keep each explanation proportional to its role in the study.
 
@@ -71,11 +72,17 @@ Present scientific findings and open research questions in the main text. Report
 
 Use a bold, bracketed prefix at the start of the passage, table entry, or figure statement it qualifies. In LaTeX, use `\ReportStatus{Hypothesis}`, `\ReportStatus{Preliminary}`, or `\ReportStatus{TODO}` from the shared style file; in Markdown, use `**[Hypothesis]**`, `**[Preliminary]**`, or `**[TODO]**`. Keep the following prose in normal type and explain the labels once if needed. Distinguish completed work from planned work, and state uncertainty beside the claim it affects. Keep execution fixes and agent reminders in the agent notes.
 
-## Present Results, Figures, and References
+## Present Evidence and Concepts Visually
 
-For each result, state what it supports and what remains open. Give the setup, comparison, metric, units, uncertainty, and assumptions needed to assess it. Generate plots and tables from traceable data or stated calculations. Define axes and quantities. Write self-contained figure captions, and make each table understandable from its title, body, and notes.
+For each result, state what it supports and what remains open. Give the setup, comparison, metric, units, uncertainty, and assumptions needed to assess it. Use plots to expose trends, distributions, differences, convergence, and uncertainty that prose or a list of numbers obscures. Use tables for exact values or compact repeated comparisons. Generate quantitative visuals from traceable data or stated calculations, retain relevant variability, and make axis scales and comparison conditions explicit.
 
-Draw publication-ready figures in the clean, precise style of Nature and PRL articles. Use clear layouts, crisp lines, and distinguishable colors. Default to Seaborn's `muted` palette for discrete data series. Use a sequential palette for continuous magnitudes and a diverging palette for values around a meaningful midpoint. Use the existing plotting environment and install `seaborn` there when needed. Apply the palette while preserving the specified fonts and layout.
+Use explanatory figures to show the objects and relationships needed to understand the science: a configuration, a mechanism, a method's information flow, or the action of a mathematical operation. Choose the simplest accurate representation and label the quantities and relationships in the report's terminology. Distinguish schematic illustrations and hypothetical examples from measured or computed results. Show assumptions or omitted dimensions when they affect interpretation; an illustrative arrow alone does not establish causation.
+
+Use figures to show comparisons and relationships, and use the nearby prose to explain their meaning, evidence, and limits. Remove passages that merely repeat every label or data point. Write self-contained captions that identify the panels, symbols, conditions, and main observation; make each table understandable from its title, body, and notes. Keep labels short, layouts uncluttered, and explanatory detail in the caption or surrounding text.
+
+Draw publication-ready figures in the clean, precise style of Nature and PRL articles. Apply one visual style to data plots and concept diagrams throughout the report and SI, including figures made with different tools. Reuse shared style settings for fonts, type sizes, line weights, spacing, panel labels, and color assignments. Give the same quantity or category the same visual meaning across figures. Use clear layouts, crisp lines, restrained color, and adequate white space; use shapes, line styles, or markers as well as color where distinctions matter.
+
+Default to Seaborn's `muted` palette for discrete data series and conceptual categories. Use a sequential palette for continuous magnitudes and a diverging palette for values around a meaningful midpoint. Use the existing plotting environment and install `seaborn` there when needed. Preserve the specified fonts and layout when applying its palettes or themes.
 
 Use Times New Roman for figure text and compatible fonts for mathematical symbols. Keep all text inside figures in English, including axes, legends, and annotations; use Chinese captions in Chinese reports. Size labels, legends, and annotations to look approximately as large as the body text after insertion at the intended width. Check exported figures at that size and verify their actual fonts. Keep editable sources. Export report figures as PDF and prefer those files in the report; keep PNGs or other formats as useful previews or auxiliary outputs. Preserve vector text and lines where supported and retain adequate resolution for embedded raster content.
 
@@ -103,7 +110,7 @@ For a new report, keep the selected entry point named `main.tex` at the project 
 
 Format LaTeX with `latexindent`, enabling `oneSentencePerLine` and line-break modification. Keep each complete prose sentence on one source line, preserve paragraph breaks, and indent structured environments consistently. Disable fixed-width wrapping. Check that formatting preserves the content and LaTeX semantics.
 
-Compile LaTeX with the available project toolchain and inspect the PDF. Check scientific consistency, references and citations, equations and symbols, figures and tables, and readability from the stated baseline. Fix build and presentation errors within scope. If compilation is unavailable, deliver the source and state that the rendered output is unverified.
+Compile LaTeX with the available project toolchain and inspect the PDF. Check scientific consistency, references and citations, equations and symbols, figures and tables, and readability from the stated baseline. Review text-heavy passages for a comparison or relationship that a figure would make clearer, then revise the figure and prose together. Inspect every figure at its final insertion size for readable labels, correct fonts, consistent styling, overlap, clipping, and an accurate correspondence with its caption and evidence. Fix build and presentation errors within scope. If compilation is unavailable, deliver the source and state that the rendered output is unverified.
 
 ## Review Independently and Deliver
 
@@ -115,6 +122,7 @@ Ask the reviewer to check:
 - Technical correctness, assumptions, methods, results, citations, and whether the evidence supports each conclusion.
 - The current scientific contribution, supporting evidence, originality relative to verified prior work, and remaining validation. Identify the further research needed for a future publication while preserving the working report's explanatory depth.
 - Natural academic language, precise terminology, clear explanations, and unnecessary or formulaic wording.
+- Visual coverage of important data and difficult concepts, scientific accuracy of diagrams, and consistent, readable figure styling at the final page size.
 
 Request specific, prioritized findings with locations and reasons. Check each finding against the evidence and make supported corrections throughout the affected parts. Rebuild and inspect changed output, then have the reviewer recheck substantive fixes. Continue until material issues that can be resolved within the writing task are addressed. Carry remaining research needs into the delivered report as limitations or TODOs. If subagents are unavailable, perform a self-review and state that independent review remains unperformed.
 

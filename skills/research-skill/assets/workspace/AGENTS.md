@@ -12,6 +12,7 @@
 - Data, model artifacts, and simulator inputs: [Actual local or external paths.]
 - Generated run outputs: [Ignored run directory.]
 - Selected report figures: [PDF figure directory.]
+- Project memory: `memory.md`.
 - Research record: [Primary English agent-record path.]
 - Reader-facing report: [Report directory and entry point.]
 
@@ -24,7 +25,9 @@
 
 ## Working Conventions
 
-Keep this file focused on stable project facts. Maintain current status and dated experiment history in the research record. Keep that record in English and eligible for Git.
+Read this file, `memory.md`, and the research record's current-state summary when starting or resuming work. Verify live job state before continuing an interrupted operation.
+
+Keep operating requirements and workspace entry points in this file, durable knowledge and decision rationale in `memory.md`, and current status and dated experiment history in the research record. Save user-requested memories in the file matching their purpose. Keep each fact in one place and link to its evidence. Maintain these records in English and keep them eligible for Git.
 
 Keep maintained source, authored configurations, report sources, and selected report figures separate from generated outputs. Route generated CSV/JSON results, manifests, logs, checkpoints, and caches to ignored locations. Preserve original data and evidence required to reproduce current conclusions.
 

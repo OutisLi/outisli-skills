@@ -6,7 +6,8 @@ Confirm the actual workspace path and host. Inspect existing files, instructions
 
 | Location                | Purpose                                                                                        | Default Git policy                                         |
 | ----------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
-| `AGENTS.md`             | Current research objective, stable constraints, paths, environment, and working conventions    | Track                                                      |
+| `AGENTS.md`             | Research objective, operating requirements, environment, resources, and workspace entry points | Track                                                      |
+| `memory.md`             | Durable project knowledge, user-requested memories, and decision rationale with evidence       | Track                                                      |
 | `.gitignore`            | Exclusions for generated and local-only material                                               | Track                                                      |
 | `src/`                  | Maintained implementation, preparation, evaluation, analysis, and plotting scripts             | Track                                                      |
 | `configs/`              | Authored experiment and execution configurations, including JSON or YAML                       | Track                                                      |
@@ -28,13 +29,17 @@ Keep generated simulation output under `results/<run-id>/`, even when the mainta
 
 Use `working-report`'s internal report layout under `reports/`: a thin `main.tex`, chapter files in `chap/`, compilation output in `build/`, and final `main.pdf` beside the entry point. Reference selected PDFs from `figures/` through paths that resolve from the report directory.
 
-## Maintain Instructions and Records
+## Maintain Instructions, Memory, and Records
 
 Use the templates in `assets/workspace/` for a new workspace. Fill their fields with confirmed facts and remove irrelevant placeholders. For existing files, merge the needed information into the current structure instead of overwriting valid instructions or records.
 
-Keep `AGENTS.md` short and stable. It should identify the goal and acceptance criteria, protected inputs, environment and commands, resource boundaries, canonical paths, and the internal record and report locations. Put changing job state, run results, retries, dates, and research history in the agent record. Revise instructions when the user's goal or a stable project convention changes.
+Keep `AGENTS.md` short and stable. It identifies the goal and acceptance criteria, protected inputs, environment and commands, resource boundaries, and canonical paths. Point to root-level `memory.md`, the primary agent record, and the report. Revise it when the user's goal or an operating requirement changes.
 
-Keep one primary agent record. Start it with current findings, running work, unresolved decisions, remaining resources, and the next justified action. Follow with dated entries that state the question, relevant inputs or run identifier, action, observed evidence, interpretation, and next decision. Record operational causes as hypotheses until supported. Preserve source pointers and enough context to understand earlier failed attempts without loading their full logs.
+Organize `memory.md` by subject rather than chronology. Keep user context worth remembering, settled choices and their reasons, verified project knowledge, and reusable lessons. Each entry states its scope and a source or evidence pointer; include a version or verification date when the fact can change. Preserve uncertainty explicitly. When the user asks to remember an operating rule, put the rule in `AGENTS.md` and link to it from memory only when additional rationale is useful.
+
+Keep one primary agent record. Start it with the active subtask, current findings, running work, unresolved decisions, remaining resources, and the next justified action. For running work, include the host, job identifier, output path, last check, and next check. Follow with dated entries that state the question, relevant inputs or run identifier, action, observed evidence, interpretation, and next decision. Record operational causes as hypotheses until supported. Preserve source pointers and enough context to understand earlier failed attempts without loading their full logs.
+
+On entry or resumption, read `AGENTS.md`, `memory.md`, and the current-state summary, then open only the records needed for the next decision. Keep each fact in its primary file. Link from current state to established memory, and from memory to the experiment that supports it. Correct outdated summaries in place while retaining useful dated evidence in the agent record. Reuse established record paths when organizing an existing workspace.
 
 For each run, keep the exact command, input identities, configuration, environment, seeds, validation evidence, and code version alongside its outputs. Identify the executed code with a commit plus tracked changes and relevant untracked files, or a snapshot of the source and configuration actually used. Keep these generated manifests and snapshots locally in the ignored run directory. Summarize their scientific meaning in the tracked Markdown record.
 

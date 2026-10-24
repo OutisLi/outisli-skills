@@ -1,0 +1,4 @@
+interface:
+  display_name: "Monitor Skill"
+  short_description: "Wait efficiently and verify long-running jobs"
+  default_prompt: "Use $monitor-skill to follow this job with duration-aware checks and continue when its result is verified."
