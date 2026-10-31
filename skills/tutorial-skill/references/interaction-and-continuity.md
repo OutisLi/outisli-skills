@@ -4,23 +4,17 @@ Use this protocol to keep the conversation efficient, collaborative, and easy to
 
 ## Natural Pacing
 
-Prefer this rhythm:
+Apply the delivery pace established during opening calibration. Within each teaching section, use this rhythm:
 
 ```text
 orient -> explain the blocking idea -> take one action -> inspect evidence
 ```
 
-Do not default to:
-
-```text
-questionnaire -> full lecture -> final recipe -> quiz -> resource list
-```
-
-A normal turn should move the task forward. It may contain explanation, action, and verification together when no user response is needed.
+A section may contain explanation, action, and verification together when no user response is needed. Its size follows a coherent idea or task decision, not a fixed paragraph count.
 
 ## High-Value Stop Points
 
-Pause when the user's next contribution is required to avoid guessing:
+Pause at the end of a section when the user selected section-by-section delivery. Otherwise, pause when the user's next contribution is required to avoid guessing:
 
 - the outcome has two materially different interpretations;
 - a supplied artifact or environment must be inspected by the user;
@@ -41,7 +35,7 @@ Interpret these signals immediately:
 - **why:** explain the causal, mathematical, or design reason for the current step, not the history of the field;
 - **show me:** use a small worked case or the user's actual artifact;
 - **summary:** compress the task state and mental model;
-- **continue:** resume from the recorded next action without restarting.
+- **continue:** proceed to the next section or action without restarting understood material.
 
 ## Tone and Presentation
 

@@ -12,7 +12,7 @@ Infer as much as possible before asking. Capture internally:
 - available artifacts, tools, data, and prior attempts;
 - which parts the user wants to perform versus delegate.
 
-After the baseline/target calibration, ask at most one additional blocking question, and only if different answers would lead to materially different actions. If the user has already said they are new to the required background, do not ask them to rate that background again.
+After the opening calibration of baseline, target, and conversational delivery pace, ask at most one additional blocking question, and only when different answers would materially change the next action. Reuse the user's stated background instead of asking them to rate it again.
 
 ## 2. Inspect Before Teaching
 

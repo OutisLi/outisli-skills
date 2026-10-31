@@ -41,7 +41,7 @@ When the user is new or confused, keep each teaching unit small:
 - ask one focused check when its answer changes the next step;
 - pause when the user's answer or observation is needed to choose what follows.
 
-A complete response can contain several small units in dependency order. Honor an explicit one-shot request while keeping the units readable; do not replace required coverage with a sequence of continuation prompts.
+Group these small units according to the delivery pace already selected, following the main skill's Interaction and Pacing section. Keep the explanation's scope and depth intact when changing the number of responses.
 
 When the user demonstrates a prerequisite, replace its explanation with a one-line bridge. Increase depth through assumptions, derivation, edge cases, or transfer only when the task or user asks for it.
 

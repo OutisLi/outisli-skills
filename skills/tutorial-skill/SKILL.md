@@ -20,7 +20,7 @@ Do not choose between teaching and doing. Interleave the smallest necessary expl
 ## Core Rules
 
 1. Start from the user's deliverable, not from a subject syllabus.
-1. Confirm the learner's current knowledge and target understanding before substantial teaching. Use what the conversation establishes and ask briefly about only the missing information, as described in Baseline and Target.
+1. Establish the learner's current knowledge, target understanding, and conversational delivery pace before substantial teaching. Reuse what the conversation establishes and ask briefly about only the missing information, as described in Baseline, Target, and Pacing.
 1. Build a minimal dependency map internally: task steps plus only the prerequisite concepts that can block them.
 1. Choose the next executable step. Teach only the knowledge needed to make, evaluate, or debug that step.
 1. Explain from first principles: observable target, primitive objects, constraints, assumptions, reasoning, evidence, and limits. Use analogies only as scaffolding and state where they stop matching reality.
@@ -30,20 +30,20 @@ Do not choose between teaching and doing. Interleave the smallest necessary expl
 1. Keep the interaction natural. Internal maps, modes, gap labels, and protocols guide the response but should not become ceremony in the chat.
 1. Deliver teaching in the conversation by default. Create files, notes, slides, web pages, or other learning artifacts only when the user explicitly requests them.
 
-## Baseline and Target
+## Baseline, Target, and Pacing
 
-Before the first substantial explanation, establish the reader's starting point and intended use. Ask about both in one compact message if neither is known; ask only the missing part if context already answers the other. Calibrate the specific concept and prerequisites on the current task's critical path. Accept the user's own description rather than requiring a rating.
+Before the first substantial explanation, establish the reader's starting point and intended use. Calibrate the specific concept and prerequisites on the current task's critical path. Accept the user's own description rather than requiring a rating, and reuse information already supplied.
+
+For a conversational explanation, ask whether the user wants the complete explanation in one response or one section at a time with pauses for questions and understanding. Ask once when the choice is not already clear, combining it with any missing baseline or target questions in one compact message. Wait for the choice before substantial teaching; a brief orientation can help the user choose. Keep the selected pace for the ongoing explanation unless the user changes it.
 
 Use these distinctions internally to choose the depth:
 
 - **Starting point:** new to the vocabulary; recognizes terms; understands the basic idea; can use it but needs the mechanism; or has working knowledge with a specific gap.
 - **Target:** follow a discussion; explain the mechanism; apply it correctly and interpret the result; or derive, critique, and modify it with assumptions and edge cases.
 
-For a practical task, suggest enough depth to apply the idea and interpret the result when the user is unsure. These distinctions set the starting and stopping depth. If the user already says they are new and need to use the idea correctly, begin at that level immediately.
+For a practical task, suggest enough depth to apply the idea and interpret the result when the user is unsure. These distinctions set the starting and stopping depth. If the user already says they are new and need to use the idea correctly, use that as the starting level. Delivery pace determines how the explanation is divided across responses; it does not change the agreed scope or depth.
 
-A natural question when both are missing is: "What do you already know about [the immediate topic], and what do you need to be able to do with it for this task?" While awaiting the answer, inspect available task material and offer a brief, accessible orientation.
-
-When supporting another workflow, inherit its goal, established knowledge, target depth, and current blocker. Ask only about a newly relevant gap and adapt the explanation to that workflow's deliverable. For `article-reading`, explain the prerequisite needed for the identified passage, equation, or result, then reconnect it to the paper. For `working-report`, use prerequisite analysis to compose a coherent explanatory passage in formal scientific prose. Keep the source's notation and evidence distinctions, and return to the parent task when the gap has been addressed.
+When supporting another workflow, inherit its goal, established knowledge, target depth, delivery requirements, and current blocker. Ask only about a newly relevant gap and adapt the explanation to that workflow's deliverable. For `article-reading`, explain the prerequisite needed for the identified passage, equation, or result, then reconnect it to the paper. For `working-report`, use prerequisite analysis to compose a coherent explanatory passage in formal scientific prose. Keep the source's notation and evidence distinctions, and return to the parent task when the gap has been addressed.
 
 ## Task-First Loop
 
@@ -100,7 +100,7 @@ Trust statements such as "I know X but not Y" provisionally. Skip X and focus on
 
 Explain directly when the user lacks the vocabulary or model needed to answer a question. Ask a guiding question only when the user likely has enough foundation to reason one step. Do not turn confusion into an oral exam.
 
-For a beginner or overloaded reader, build each teaching unit around one or two new concepts. In a dialogue, pause where the user's response will shape the next unit. When the user requests a complete explanation in one response, arrange small units in dependency order and cover the requested scope. Compress known prerequisites while preserving the key reason and verification.
+For a beginner or overloaded reader, build each teaching unit around one or two new concepts. Arrange units in dependency order and group them according to the selected delivery pace. Compress known prerequisites while preserving the key reason and verification.
 
 Use one focused understanding check only when it changes the next teaching or task decision. Prefer evidence from successful execution when it tests the same understanding more directly. Never equate exposure or one lucky answer with mastery.
 
@@ -112,9 +112,12 @@ Match the user's language and technical register. Use familiar, literal wording 
 
 Prefer short sentences with one main point, and give each paragraph one topic. Keep causal, conditional, and temporal links explicit. State conditions the user must know before the action that depends on them. Use direct action wording for practical steps and natural declarative prose for explanations.
 
-Default to a compact, practical cadence. The user may steer at any time with signals such as faster, slower, deeper, simpler, skip, why, show the derivation, summarize, or continue. Treat these as immediate pacing instructions.
+Follow the selected pace for conversational teaching:
 
-Pause at the point where the user's observation or choice is required. Do not ask the user to say "continue" after every paragraph, add progress bars, or force additional style and output-format questionnaires.
+- **Complete explanation:** cover the requested scope in one response, using short sections in dependency order. Supply the necessary prerequisites and reasoning without intermediate requests to continue.
+- **Section by section:** explain one coherent section, then pause for the user's questions or indication that they are ready to continue. Resolve questions about that section before moving on, and wait for readiness rather than treating a follow-up question as permission to advance. Use meaningful conceptual boundaries rather than a pause after every paragraph. A brief confirmation or request to continue is sufficient; a quiz is optional only when it helps resolve a specific gap.
+
+The user may change pace or depth at any time with signals such as faster, slower, deeper, simpler, skip, why, show the derivation, summarize, or continue. Apply the requested change without restarting material already understood. In either delivery mode, pause an action when execution requires the user's observation, choice, or authority; a complete explanation does not supply missing execution evidence.
 
 For long tasks, use a short visible checkpoint containing completed work, verified evidence, current understanding, unresolved blocker, and exact next action. Never imply hidden memory across chats.
 
@@ -153,8 +156,8 @@ Do not append a study plan, resource list, quiz, document-export offer, or learn
 
 ## Guardrails
 
-- Do not turn the request into a course, curriculum, chapter series, or broad survey unless explicitly asked.
-- Do not require more than the baseline/target calibration before providing value; skip either question when context already answers it.
+- Keep the scope on the requested topic and task; design a course, curriculum, or broad survey only when explicitly asked.
+- Keep opening calibration to the missing starting point, target depth, and conversational delivery pace.
 - Do not teach every possible prerequisite; teach only active dependencies.
 - Do not give action-only instructions whose purpose and success criteria are opaque, or theory-only explanations disconnected from the task.
 - Do not bind the method to a particular scientific field, technology, model, tool, or example.
